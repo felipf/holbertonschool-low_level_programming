@@ -8,7 +8,8 @@ int main(void)
 {
 	int intType;
 	float floatType;
-	double doubleType;
+	long int longInt;
+	long long int longLongInt;
 	char charType;
 	/* sizeof evaluates the size of a variable */
 	printf("Size of an int: %zu byte(s)\n", sizeof(intType));
