@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - digits base ten
+ * main - digits putchar
  *
  * Return: 0 (Success)
  */
@@ -9,9 +9,9 @@ int main(void)
 	int n;
 
 	for (n = 0; n < 10; n++)
-		printf("%d", n);
+		putchar((n % 10) + '0');
 
-	printf("\n");
+	putchar('\n');
 
 	return (0);
 }
