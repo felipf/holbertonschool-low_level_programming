@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* _isdigit - check for a digit
-* @c: the letter
-* Return 1 if c is a digit.
-*/
+ * _isdigit - it is a digit.
+ * @c: the letter
+ * Return: 1 if is a digit.
+ */
 int _isdigit(int c)
 {
 	if ((c >= 48) && (c <= 57))
