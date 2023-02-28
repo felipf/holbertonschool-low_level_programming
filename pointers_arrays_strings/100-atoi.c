@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 /**
  * _atoi - converts a string to an integer.
  * @s: the string
@@ -7,20 +8,29 @@
  */
 int _atoi(char *s)
 {
+	int result = 0;
 	int sign = 1;
-	int num = 0;
+	int digit;
 
-	while (*s != '\0' && (*s < '0' || *s > '9'))
+	while (*s != '\0')
 	{
-		if (*s == '-')
-			sign *= -1;
-		s++;
-	}
+        	if (*s == '-') {
+            	sign *= -1;
+        }	else if (*s == '+')
+	{
+        }	else if (*s >= '0' && *s <= '9')
+	{
+            	digit = *s - '0';
 
-	while (*s >= '0' && *s <= '9')
+         	if (result > (INT_MAX - digit) / 10)
 	{
-		num = num * 10 + (*s - '0');
-		s++;
-	}
-	return (num * sign);
+                return sign > 0 ? INT_MAX : INT_MIN;
+        }
+        	result = result * 10 + digit;
+        }	else if (result > 0) {
+		break;
+        }
+        s++;
+    }
+    return sign * result;
 }
