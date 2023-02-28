@@ -14,23 +14,29 @@ int _atoi(char *s)
 
 	while (*s != '\0')
 	{
-        	if (*s == '-') {
-            	sign *= -1;
-        }	else if (*s == '+')
-	{
-        }	else if (*s >= '0' && *s <= '9')
-	{
-            	digit = *s - '0';
+		if (*s == '-')
+		{
+		sign *= -1;
+		}
+		else if (*s == '+')
+		{
+		}
+		else if (*s >= '0' && *s <= '9')
+		{
+			digit = *s - '0';
 
-         	if (result > (INT_MAX - digit) / 10)
-	{
-                return sign > 0 ? INT_MAX : INT_MIN;
-        }
-        	result = result * 10 + digit;
-        }	else if (result > 0) {
-		break;
-        }
-        s++;
-    }
-    return sign * result;
+		if (result > (INT_MAX - digit) / 10)
+		{
+			return (sign > 0 ? INT_MAX : INT_MIN);
+		}
+			result = result * 10 + digit;
+		}
+			else if (result > 0)
+		{
+
+			break;
+		}
+		s++;
+	}
+	return (sign * result);
 }
