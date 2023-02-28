@@ -33,4 +33,6 @@ void print_array(int *a, int n);
 
 int _atoi(char *s);
 
+char *_strcat(char *dest, char *src);
+
 #endif
