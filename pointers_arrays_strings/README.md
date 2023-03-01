@@ -1,1 +1,1 @@
-pointers, arrays and strings
+more pointers hu
