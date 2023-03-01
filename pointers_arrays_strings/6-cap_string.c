@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * *cap_string - capitalize all words of a string.
  * @s: string
@@ -22,6 +21,7 @@ char *cap_string(char *s)
 					s[cont - 1] == '?' || s[cont - 1] == '"' ||
 					s[cont - 1] == '(' || s[cont - 1] == ')' ||
 					s[cont - 1] == '{' || s[cont - 1] == '}' ||
+					s[cont - 1] == ' ' || s[cont - 1] == '\t' ||
 					s[cont - 1] == '\n')
 			{
 				s[cont] -= 32;
