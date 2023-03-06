@@ -1,15 +1,16 @@
 #include "main.h"
 /**
- * factorial - return the factorial of a given number
+ * factorial - return the factorial
  * @n: number
- * Result: factorial of number
+ * @factorial: the function of the task
+ * Result: result
  */
 int factorial(int n)
 {
 	if (n < 0)
 		return (-1);
-	else if (n == 0 || n == 1)
+	else if (n == 0)
 		return (1);
 	else
-		return (n + factorial(n - 1));
+		return (n * factorial(n - 1));
 }
