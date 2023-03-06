@@ -1,10 +1,9 @@
 #include "main.h"
 /**
- * factorial - return the factorial
- * @n: number
- * @factorial: the function of the task
- * Result: result
- */
+* factorial - prints the factorial of a certain given number.
+* @n: given number.
+* Return: if n < 0 --> -1 (error).
+*/
 int factorial(int n)
 {
 	if (n < 0)
