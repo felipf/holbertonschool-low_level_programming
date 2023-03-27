@@ -9,11 +9,11 @@ void array_interator(int *array, size_t size, void (*action)(int))
 {
 	unsigned long int i;
 
-	if (array && action)
+	if ((*array) && action)
 	{
 		for (i = 0; i < size; i++)
 		{
-			action(array[i]);
+			(*action)(array[i]);
 		}
 	}
 }
