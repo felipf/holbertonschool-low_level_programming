@@ -1,6 +1,6 @@
 #include "function_pointers.h"
 /**
- * array_iterator - func that exec a func given as a parameter on each element of an array
+ * array_iterator - exec func given on each array elem.
  * @array: the array
  * @size: size of array
  * @action: function
