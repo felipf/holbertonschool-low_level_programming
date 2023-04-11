@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 /**
- * read_textfile - func that reads a text file and prints it to the POSIX std output.
+ * read_textfile - func that reads a text file and prints it.
  * @filename: name
  * @letters: num of letters to print
  * Return: number of letters.
