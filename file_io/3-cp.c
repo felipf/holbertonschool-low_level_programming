@@ -17,31 +17,31 @@ int main(int argc, char *argv[])
 }
 /**
  * cp_content - copy content
- * @file_one: from
- * @file_two: to
+ * @fi_one: from
+ * @fi_two: to
  */
-void cp_content(const char *file_one, const char *file_two)
+void cp_content(const char *fi_one, const char *fi_two)
 {
 	int file_from, file_to, nread = 5555, nwrite;
 	char *cCount[5555];
 	mode_t modsie = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
-	file_from = open(file_one, O_RDONLY);
+	file_from = open(fi_one, O_RDONLY);
 
 	if (file_from == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_one), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fi_one), exit(98);
 
-	file_to = open(file_two, O_CREAT | O_TRUNC | O_WRONLY, modsie);
+	file_to = open(fi_two, O_CREAT | O_TRUNC | O_WRONLY, modsie);
 	if (file_to == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fi_two), exit(99);
 
 	nread = read(file_from, cCount, 5555);
 	if (nread == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_one), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fi_one), exit(98);
 
 	nwrite = write(file_to, cCount, nread);
 	if (nwrite == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_two), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fi_two), exit(99);
 
 	if (close(file_to) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from), exit(100);
